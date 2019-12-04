@@ -1,7 +1,7 @@
 <?php
 
     require 'lib/functions.php';
-    $pets = get_pets(3);
+    $pets = get_pets();
 ?>
 <?php require 'layout/header.php'; ?>
 
@@ -19,7 +19,11 @@
         <div class="row">
             <?php foreach ($pets as $pet) { ?>
             <div class="col-md-4 pet-list-item">
-                <h2><?php echo $pet['name']; ?></h2>
+                <h2>
+                    <a href="show.php?id=<?php echo $pet['id']; ?>">
+                    <?php echo $pet['name']; ?>
+                        </a>
+                    </h2>
                 <img src="images/<?php echo $pet['image']; ?>">
                 <blockquote class="pet-details">
                     <span class="label label-info"> <?php echo $pet['breed']; ?></span>
