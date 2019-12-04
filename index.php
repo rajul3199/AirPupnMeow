@@ -1,4 +1,5 @@
 <?php
+
     require 'lib/functions.php';
     $pets = get_pets();
 ?>
@@ -19,7 +20,7 @@
             <?php foreach ($pets as $pet) { ?>
             <div class="col-md-4 pet-list-item">
                 <h2><?php echo $pet['name']; ?></h2>
-                <img src="images/<?php echo $pet['filename']; ?>">
+                <img src="images/<?php echo $pet['image']; ?>">
                 <blockquote class="pet-details">
                     <span class="label label-info"> <?php echo $pet['breed']; ?></span>
                     <?php

@@ -2,9 +2,13 @@
 
 function get_pets()
 {
-    $contents = file_get_contents('resources/pets.json');
-    $pets = json_decode($contents, true);
+	$config = require 'config.php';
 
+   $pdo = new PDO($config['database_dns'],$config['database_user'],$config['database_pass']);
+
+    $result = $pdo->query('select * from pet');
+
+    $pets = $result->fetchAll();
     return $pets;
 }
 
