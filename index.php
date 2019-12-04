@@ -1,7 +1,7 @@
 <?php
 
     require 'lib/functions.php';
-    $pets = get_pets();
+    $pets = get_pets(3);
 ?>
 <?php require 'layout/header.php'; ?>
 
